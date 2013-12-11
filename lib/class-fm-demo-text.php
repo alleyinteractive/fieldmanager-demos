@@ -31,6 +31,15 @@ class FM_Demo_Text {
 		$fm = new Fieldmanager_Textfield( false, array( 'name' => 'basic_text' ) );
 		$fm->add_meta_box( 'Basic Text Field', 'demo-text' );
 
+		$fm = new Fieldmanager_Textfield( array(
+			'name'           => 'repeating_text_field',
+			'label'          => 'Text Field',
+			'limit'          => 0,
+			'add_more_label' => 'Add another field',
+			'sortable'       => true,
+		) );
+		$fm->add_meta_box( 'Repeating Standalone Text Field', 'demo-text' );
+
 		$fm = new Fieldmanager_Textfield( false, array(
 			'name'          => 'text_options',
 			'default_value' => 'Some default text',
@@ -38,15 +47,12 @@ class FM_Demo_Text {
 		) );
 		$fm->add_meta_box( 'Text field with options', 'demo-text' );
 
-		$fm = new Fieldmanager_Group( array(
+		$fm = new Fieldmanager_Textfield( array(
 			'name'           => 'repeatable_text',
 			'limit'          => 0,
 			'add_more_label' => 'Add another field',
 			'sortable'       => true,
-			'label'          => 'Field',
-			'children'       => array(
-				'text_field' => new Fieldmanager_Textfield( 'Repeatable Field' )
-			)
+			'label'          => 'Text Field'
 		) );
 		$fm->add_meta_box( 'Repeatable Text Fields', 'demo-text' );
 
