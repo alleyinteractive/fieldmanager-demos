@@ -30,6 +30,21 @@ class FM_Demo_Context_Term {
 	public function init() {
 		$months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
 
+		$fm = new Fieldmanager_Textfield( array(
+			'name'  => 'text_field',
+			'label' => 'Text Field'
+		) );
+		$fm->add_term_form( 'Standalone Text Field', 'demo-context-term' );
+
+		$fm = new Fieldmanager_Textfield( array(
+			'name'           => 'repeating_text_field',
+			'label'          => 'Text Field',
+			'limit'          => 0,
+			'add_more_label' => 'Add another field',
+			'sortable'       => true,
+		) );
+		$fm->add_term_form( 'Standalone Repeating Text Field', 'demo-context-term' );
+
 		$fm = new Fieldmanager_Group( array(
 			'name'     => 'meta_fields',
 			'children' => array(
