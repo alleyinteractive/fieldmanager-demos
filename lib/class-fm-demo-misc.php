@@ -38,7 +38,7 @@ class FM_Demo_Misc {
 				'date_field'            => new Fieldmanager_Datepicker( 'Datepicker Field' ),
 				'date_customized_field' => new Fieldmanager_Datepicker( array(
 					'label'       => 'Datepicker Field with Options',
-					'date_format' => 'Y-m-d H:i:s',
+					'date_format' => 'Y-m-d',
 					'use_time'    => true,
 					'js_opts'     => array(
 						'dateFormat'  => 'yy-mm-dd',
