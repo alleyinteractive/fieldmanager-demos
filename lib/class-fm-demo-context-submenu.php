@@ -23,12 +23,12 @@ class FM_Demo_Context_Submenu {
 	}
 
 	public function setup() {
-		fm_register_submenu_page( 'tools_meta', 'tools.php', 'Meta Fields' );
-		add_action( 'fm_submenu_tools_meta', array( $this, 'tools_init' ) );
-		fm_register_submenu_page( 'users_meta', 'users.php', 'Meta Boxes' );
-		add_action( 'fm_submenu_users_meta', array( $this, 'users_init' ) );
-		fm_register_submenu_page( 'options_meta', 'options-general.php', 'Meta Boxes' );
-		add_action( 'fm_submenu_options_meta', array( $this, 'options_init' ) );
+		fm_register_submenu_page( 'meta_fields', 'tools.php', 'Meta Fields' );
+		add_action( 'fm_submenu_meta_fields', array( $this, 'tools_init' ) );
+		fm_register_submenu_page( 'user_fields', 'users.php', 'Meta Boxes' );
+		add_action( 'fm_submenu_user_fields', array( $this, 'users_init' ) );
+		fm_register_submenu_page( 'option_fields', 'options-general.php', 'Meta Boxes' );
+		add_action( 'fm_submenu_option_fields', array( $this, 'options_init' ) );
 	}
 
 	public function tools_init() {
@@ -53,7 +53,7 @@ class FM_Demo_Context_Submenu {
 
 	public function users_init() {
 		$fm = new Fieldmanager_Group( array(
-			'name'           => 'repeatable_meta_fields',
+			'name'           => 'user_fields',
 			'limit'          => 0,
 			'add_more_label' => 'Add another set of fields',
 			'sortable'       => true,
@@ -75,7 +75,7 @@ class FM_Demo_Context_Submenu {
 
 	public function options_init() {
 		$fm = new Fieldmanager_Group( array(
-			'name'           => 'repeatable_meta_boxes',
+			'name'           => 'option_fields',
 			'limit'          => 0,
 			'add_more_label' => 'Add another Meta Box',
 			'sortable'       => true,
