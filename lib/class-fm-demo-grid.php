@@ -24,7 +24,7 @@ class FM_Demo_Grid {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-grid', array( 'singular' => 'Grid' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-grid', array( $this, 'init' ) );
 	}
 
 	public function init() {

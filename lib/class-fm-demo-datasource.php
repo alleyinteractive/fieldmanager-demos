@@ -24,7 +24,7 @@ class FM_Demo_Datasource {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-datasource', array( 'singular' => 'Datasource', 'plural' => 'Datasource' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-datasource', array( $this, 'init' ) );
 	}
 
 	public function init() {

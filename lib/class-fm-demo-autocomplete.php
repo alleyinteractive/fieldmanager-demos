@@ -24,7 +24,7 @@ class FM_Demo_Autocomplete {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-autocomplete', array( 'singular' => 'Autocomplete', 'plural' => 'Autocomplete' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-autocomplete', array( $this, 'init' ) );
 	}
 
 	public function init() {

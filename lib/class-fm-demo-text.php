@@ -24,7 +24,7 @@ class FM_Demo_Text {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-text', array( 'singular' => 'Text Field' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-text', array( $this, 'init' ) );
 	}
 
 	public function init() {

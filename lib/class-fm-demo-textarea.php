@@ -24,7 +24,7 @@ class FM_Demo_TextArea {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-textarea', array( 'singular' => 'TextArea' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-textarea', array( $this, 'init' ) );
 	}
 
 	public function init() {

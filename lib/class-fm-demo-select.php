@@ -24,7 +24,7 @@ class FM_Demo_Select {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-select', array( 'singular' => 'Select Field' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-select', array( $this, 'init' ) );
 	}
 
 	public function init() {

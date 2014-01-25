@@ -24,7 +24,7 @@ class FM_Demo_Group {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-group', array( 'singular' => 'Group' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-group', array( $this, 'init' ) );
 	}
 
 	public function init() {
@@ -76,7 +76,6 @@ class FM_Demo_Group {
 			'label'          => 'Meta Box',
 			'children'       => array(
 				'repeatable_group' => new Fieldmanager_Group( array(
-					'name'           => 'repeatable_meta_fields',
 					'limit'          => 0,
 					'add_more_label' => 'Add another set of fields',
 					'sortable'       => true,
@@ -144,7 +143,6 @@ class FM_Demo_Group {
 			'label'          => 'Meta Box',
 			'children'       => array(
 				'repeatable_group' => new Fieldmanager_Group( array(
-					'name'           => 'repeatable_meta_fields',
 					'limit'          => 0,
 					'add_more_label' => 'Add another set of fields',
 					'sortable'       => true,
