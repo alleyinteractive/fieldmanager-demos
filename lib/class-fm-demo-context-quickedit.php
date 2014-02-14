@@ -36,7 +36,7 @@ class FM_Demo_Context_Quickedit {
 			)
 		) );
 		$fm->add_quickedit_box( 'Custom Text Field', 'post', function( $post_id, $data ) {
-			return $data['text'] ?: 'not set';
+			return !empty( $data['text'] ) ? $data['text'] : 'not set';
 		}, 'Custom Column Column' );
 
 	}
