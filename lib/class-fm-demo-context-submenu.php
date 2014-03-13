@@ -74,7 +74,6 @@ class FM_Demo_Context_Submenu {
 			'label'          => 'Meta Box',
 			'children'       => array(
 				'repeatable_group' => new Fieldmanager_Group( array(
-					'name'           => 'repeatable_meta_fields',
 					'limit'          => 0,
 					'add_more_label' => 'Add another set of fields',
 					'sortable'       => true,
