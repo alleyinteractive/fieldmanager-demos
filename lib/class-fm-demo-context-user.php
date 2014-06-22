@@ -23,7 +23,7 @@ class FM_Demo_Context_User {
 	}
 
 	public function setup() {
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_user', array( $this, 'init' ) );
 	}
 
 	public function init() {

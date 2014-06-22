@@ -24,7 +24,7 @@ class FM_Demo_Radios {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-radio', array( 'singular' => 'Radio' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-radio', array( $this, 'init' ) );
 	}
 
 	public function init() {

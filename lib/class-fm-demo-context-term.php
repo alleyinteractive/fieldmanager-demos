@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+ * Term Context Demo
  */
 
 if ( !class_exists( 'FM_Demo_Context_Term' ) ) :
@@ -24,7 +24,7 @@ class FM_Demo_Context_Term {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_taxonomy( 'demo-context-term', array( 'post_type' => 'post', 'singular' => 'Term Context' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_term_demo-context-term', array( $this, 'init' ) );
 	}
 
 	public function init() {
@@ -108,7 +108,7 @@ class FM_Demo_Context_Term {
 				) )
 			)
 		) );
-		$fm->add_term_form( 'Meta Boxes of Met aBoxes', 'demo-context-term' );
+		$fm->add_term_form( 'Meta Boxes of Meta Boxes', 'demo-context-term' );
 
 	}
 }

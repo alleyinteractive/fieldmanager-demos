@@ -24,7 +24,7 @@
 */
 
 function setup_fm_demo() {
-	if ( class_exists( 'Fieldmanager_Field' ) ) {
+	if ( defined( 'FM_VERSION' ) ) {
 		$dir = dirname( __FILE__ ) . '/lib/';
 
 		# Supporting code
@@ -46,6 +46,7 @@ function setup_fm_demo() {
 
 		# Context Demos
 		require_once( $dir . 'class-fm-demo-context-term.php' );
+		require_once( $dir . 'class-fm-demo-context-quickedit.php' );
 		require_once( $dir . 'class-fm-demo-context-user.php' );
 		require_once( $dir . 'class-fm-demo-context-submenu.php' );
 	} else {

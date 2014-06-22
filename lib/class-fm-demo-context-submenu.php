@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+ * Submenu context demo
  */
 
 if ( !class_exists( 'FM_Demo_Context_Submenu' ) ) :
@@ -23,10 +23,15 @@ class FM_Demo_Context_Submenu {
 	}
 
 	public function setup() {
-		add_action( 'init', array( $this, 'init' ) );
+		fm_register_submenu_page( 'meta_fields', 'tools.php', 'Meta Fields' );
+		add_action( 'fm_submenu_meta_fields', array( $this, 'tools_init' ) );
+		fm_register_submenu_page( 'user_fields', 'users.php', 'Meta Boxes' );
+		add_action( 'fm_submenu_user_fields', array( $this, 'users_init' ) );
+		fm_register_submenu_page( 'option_fields', 'options-general.php', 'Meta Boxes' );
+		add_action( 'fm_submenu_option_fields', array( $this, 'options_init' ) );
 	}
 
-	public function init() {
+	public function tools_init() {
 		$months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
 
 		$fm = new Fieldmanager_Group( array(
@@ -43,10 +48,12 @@ class FM_Demo_Context_Submenu {
 				'richtextarea' => new Fieldmanager_RichTextArea( 'Rich Text Area' ),
 			)
 		) );
-		$fm->add_submenu_page( 'tools.php', 'Meta Fields' );
+		$fm->activate_submenu_page();
+	}
 
+	public function users_init() {
 		$fm = new Fieldmanager_Group( array(
-			'name'           => 'repeatable_meta_fields',
+			'name'           => 'user_fields',
 			'limit'          => 0,
 			'add_more_label' => 'Add another set of fields',
 			'sortable'       => true,
@@ -63,11 +70,12 @@ class FM_Demo_Context_Submenu {
 				'richtextarea' => new Fieldmanager_RichTextArea( 'Rich Text Area' ),
 			)
 		) );
-		$fm->add_submenu_page( 'users.php', 'Meta Boxes' );
+		$fm->activate_submenu_page();
+	}
 
-
+	public function options_init() {
 		$fm = new Fieldmanager_Group( array(
-			'name'           => 'repeatable_meta_boxes',
+			'name'           => 'option_fields',
 			'limit'          => 0,
 			'add_more_label' => 'Add another Meta Box',
 			'sortable'       => true,
@@ -92,7 +100,7 @@ class FM_Demo_Context_Submenu {
 				) )
 			)
 		) );
-		$fm->add_submenu_page( 'options-general.php', 'Meta Meta Boxes' );
+		$fm->activate_submenu_page();
 
 	}
 }

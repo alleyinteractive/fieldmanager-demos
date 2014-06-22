@@ -24,7 +24,7 @@ class FM_Demo_Misc {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-misc', array( 'singular' => 'Miscellany', 'plural' => 'Miscellanies' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-misc', array( $this, 'init' ) );
 	}
 
 	public function init() {

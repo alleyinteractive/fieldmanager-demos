@@ -24,7 +24,7 @@ class FM_Demo_RichTextArea {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-richtextarea', array( 'singular' => 'RichTextArea' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-richtextarea', array( $this, 'init' ) );
 	}
 
 	public function init() {

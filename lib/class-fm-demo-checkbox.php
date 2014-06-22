@@ -24,7 +24,7 @@ class FM_Demo_Checkbox {
 
 	public function setup() {
 		FM_Demo_Data_Structures()->add_post_type( 'demo-checkbox', array( 'singular' => 'Checkbox', 'plural' => 'Checkboxes' ) );
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'fm_post_demo-checkbox', array( $this, 'init' ) );
 	}
 
 	public function init() {
@@ -36,13 +36,13 @@ class FM_Demo_Checkbox {
 			'default_value' => 'checked'
 		) );
 		$fm->add_meta_box( 'Checkbox field with options', 'demo-checkbox' );
-
+		
 		$fm = new Fieldmanager_Checkboxes( 'Checkboxes', array(
 			'name'          => 'checkbox_group',
 			'options' => array( 'One', 'Two', 'Three' )
 		) );
 		$fm->add_meta_box( 'Group of Checkboxes', 'demo-checkbox' );
-
+		/*
 		$fm = new Fieldmanager_Group( array(
 			'name'           => 'repeatable_checkbox',
 			'limit'          => 0,
@@ -54,10 +54,12 @@ class FM_Demo_Checkbox {
 			)
 		) );
 		$fm->add_meta_box( 'Repeatable Checkbox Fields', 'demo-checkbox' );
+		*/
 
 		$fm = new Fieldmanager_Checkbox( 'Basic Checkbox', array( 'name' => 'sidebar_checkbox' ) );
 		$fm->add_meta_box( 'Sidebar Checkbox Field', 'demo-checkbox', 'side' );
 
+		/*
 		$fm = new Fieldmanager_Group( array(
 			'name'           => 'sidebar_repeatable_checkbox',
 			'limit'          => 0,
@@ -69,6 +71,7 @@ class FM_Demo_Checkbox {
 			)
 		) );
 		$fm->add_meta_box( 'Sidebar Repeatable Checkbox Fields', 'demo-checkbox', 'side' );
+		*/
 	}
 }
 
