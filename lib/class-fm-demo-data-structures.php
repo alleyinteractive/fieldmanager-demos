@@ -43,7 +43,7 @@ class FM_Demo_Data_Structures {
 			$singular = ( ! empty( $args['singular'] ) ) ? $args['singular'] : $this->titleize( $type );
 			$plural = ( ! empty( $args['plural'] ) ) ? $args['plural'] : $singular . 's';
 
-			register_post_type( $type, array_merge( $args, array(
+			register_post_type( $type, array_merge( array(
 				'public' => true,
 				'supports' => array( 'title' ),
 				'labels' => array(
@@ -61,7 +61,7 @@ class FM_Demo_Data_Structures {
 					'parent_item_colon'  => '',
 					'menu_name'          => $plural
 				)
-			) ) );
+			), $args ) );
 		}
 
 		foreach ( $this->taxonomies as $taxonomy => $args ) {
