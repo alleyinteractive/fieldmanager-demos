@@ -7,6 +7,7 @@
 if ( !class_exists( 'FM_Demo_Context_Submenu' ) ) :
 
 class FM_Demo_Context_Submenu {
+	public $months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
 
 	private static $instance;
 
@@ -23,23 +24,31 @@ class FM_Demo_Context_Submenu {
 	}
 
 	public function setup() {
+		// When registering a submenu page, the field name is the cable that
+		// connects everything. In this case, 'meta_fields' needs to appear as
+		// the first arg passed to `fm_register_submenu_page()`, it needs to be
+		// in the action (prefixed with `fm_submenu_`), and then it needs to be
+		// the field's name.
 		fm_register_submenu_page( 'meta_fields', 'tools.php', 'Meta Fields' );
 		add_action( 'fm_submenu_meta_fields', array( $this, 'tools_init' ) );
+
 		fm_register_submenu_page( 'user_fields', 'users.php', 'Meta Boxes' );
 		add_action( 'fm_submenu_user_fields', array( $this, 'users_init' ) );
+
 		fm_register_submenu_page( 'option_fields', 'options-general.php', 'Meta Boxes' );
 		add_action( 'fm_submenu_option_fields', array( $this, 'options_init' ) );
+
+		add_action( 'init', array( $this, 'init' ) );
 	}
 
 	public function tools_init() {
-		$months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
 
 		$fm = new Fieldmanager_Group( array(
-			'name'     => 'meta_fields',
+			'name'     => 'meta_fields', // This name must match what we registered in `fm_register_submenu_page()`
 			'children' => array(
 				'text'         => new Fieldmanager_Textfield( 'Text Field' ),
 				'autocomplete' => new Fieldmanager_Autocomplete( 'Autocomplete', array( 'datasource' => new Fieldmanager_Datasource_Post() ) ),
-				'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $months ) ) ) ),
+				'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $this->months ) ) ) ),
 				'textarea'     => new Fieldmanager_TextArea( 'TextArea' ),
 				'media'        => new Fieldmanager_Media( 'Media File' ),
 				'checkbox'     => new Fieldmanager_Checkbox( 'Checkbox' ),
@@ -61,7 +70,7 @@ class FM_Demo_Context_Submenu {
 			'children'       => array(
 				'text'         => new Fieldmanager_Textfield( 'Text Field' ),
 				'autocomplete' => new Fieldmanager_Autocomplete( 'Autocomplete', array( 'datasource' => new Fieldmanager_Datasource_Post() ) ),
-				'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $months ) ) ) ),
+				'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $this->months ) ) ) ),
 				'textarea'     => new Fieldmanager_TextArea( 'TextArea' ),
 				'media'        => new Fieldmanager_Media( 'Media File' ),
 				'checkbox'     => new Fieldmanager_Checkbox( 'Checkbox' ),
@@ -79,6 +88,7 @@ class FM_Demo_Context_Submenu {
 			'limit'          => 0,
 			'add_more_label' => 'Add another Meta Box',
 			'sortable'       => true,
+			'collapsible'    => true,
 			'label'          => 'Meta Box',
 			'children'       => array(
 				'repeatable_group' => new Fieldmanager_Group( array(
@@ -89,7 +99,7 @@ class FM_Demo_Context_Submenu {
 					'children'       => array(
 						'text'         => new Fieldmanager_Textfield( 'Text Field' ),
 						'autocomplete' => new Fieldmanager_Autocomplete( 'Autocomplete', array( 'datasource' => new Fieldmanager_Datasource_Post() ) ),
-						'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $months ) ) ) ),
+						'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $this->months ) ) ) ),
 						'textarea'     => new Fieldmanager_TextArea( 'TextArea' ),
 						'media'        => new Fieldmanager_Media( 'Media File' ),
 						'checkbox'     => new Fieldmanager_Checkbox( 'Checkbox' ),
