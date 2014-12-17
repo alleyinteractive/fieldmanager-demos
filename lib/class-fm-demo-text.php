@@ -28,7 +28,7 @@ class FM_Demo_Text {
 	}
 
 	public function init() {
-		$fm = new Fieldmanager_Textfield( false, array( 'name' => 'basic_text' ) );
+		$fm = new Fieldmanager_Textfield( array( 'name' => 'basic_text' ) );
 		$fm->add_meta_box( 'Basic Text Field', 'demo-text' );
 
 		$fm = new Fieldmanager_Textfield( array(
@@ -40,7 +40,7 @@ class FM_Demo_Text {
 		) );
 		$fm->add_meta_box( 'Repeating Standalone Text Field', 'demo-text' );
 
-		$fm = new Fieldmanager_Textfield( false, array(
+		$fm = new Fieldmanager_Textfield( array(
 			'name'          => 'text_options',
 			'default_value' => 'Some default text',
 			'attributes'    => array( 'style' => 'width:100%' )
@@ -56,7 +56,7 @@ class FM_Demo_Text {
 		) );
 		$fm->add_meta_box( 'Repeatable Text Fields', 'demo-text' );
 
-		$fm = new Fieldmanager_Textfield( false, array( 'name' => 'sidebar_text' ) );
+		$fm = new Fieldmanager_Textfield( array( 'name' => 'sidebar_text' ) );
 		$fm->add_meta_box( 'Sidebar Text Field', 'demo-text', 'side' );
 
 		$fm = new Fieldmanager_Group( array(
