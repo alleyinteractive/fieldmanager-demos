@@ -37,8 +37,6 @@ class FM_Demo_Context_Submenu {
 
 		fm_register_submenu_page( 'option_fields', 'options-general.php', 'Meta Boxes' );
 		add_action( 'fm_submenu_option_fields', array( $this, 'options_init' ) );
-
-		add_action( 'init', array( $this, 'init' ) );
 	}
 
 	public function tools_init() {
