@@ -48,13 +48,14 @@ class FM_Demo_Text {
 		$fm->add_meta_box( 'Text field with options', 'demo-text' );
 
 		$fm = new Fieldmanager_Textfield( array(
-			'name'           => 'repeatable_text',
-			'limit'          => 0,
-			'add_more_label' => 'Add another field',
-			'sortable'       => true,
-			'label'          => 'Text Field'
+			'name'              => 'repeatable_text',
+			'limit'             => 0,
+			'add_more_label'    => 'Add another field',
+			'add_more_position' => 'top',
+			'sortable'          => true,
+			'label'             => 'Text Field'
 		) );
-		$fm->add_meta_box( 'Repeatable Text Fields', 'demo-text' );
+		$fm->add_meta_box( 'Repeatable text fields with new items at the top', 'demo-text' );
 
 		$fm = new Fieldmanager_Textfield( array( 'name' => 'sidebar_text' ) );
 		$fm->add_meta_box( 'Sidebar Text Field', 'demo-text', 'side' );
