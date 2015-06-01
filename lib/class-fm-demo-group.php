@@ -84,6 +84,43 @@ class FM_Demo_Group {
 		$fm->add_meta_box( 'Tabbed Group', 'demo-group' );
 
 		$fm = new Fieldmanager_Group( array(
+			'name'     => 'vertical_tabbed_meta_fields',
+			'tabbed'   => 'vertical',
+			'children' => array(
+				'tab-1' => new Fieldmanager_Group( array(
+					'label' => 'Tab One',
+					'children' => array(
+						'text'         => new Fieldmanager_Textfield( 'Text Field' ),
+						'autocomplete' => new Fieldmanager_Autocomplete( 'Autocomplete', array( 'datasource' => new Fieldmanager_Datasource_Post() ) ),
+						'local_data'   => new Fieldmanager_Autocomplete( 'Autocomplete without ajax', array( 'datasource' => new Fieldmanager_Datasource( array( 'options' => $months ) ) ) ),
+					)
+				) ),
+				'tab-2' => new Fieldmanager_Group( array(
+					'label' => 'Tab Two',
+					'children' => array(
+						'textarea'     => new Fieldmanager_TextArea( 'TextArea' ),
+						'media'        => new Fieldmanager_Media( 'Media File' ),
+					)
+				) ),
+				'tab-3' => new Fieldmanager_Group( array(
+					'label' => 'Tab Three',
+					'children' => array(
+						'checkbox'     => new Fieldmanager_Checkbox( 'Checkbox' ),
+						'radios'       => new Fieldmanager_Radios( 'Radio Buttons', array( 'options' => array( 'One', 'Two', 'Three' ) ) ),
+						'select'       => new Fieldmanager_Select( 'Select Dropdown', array( 'options' => array( 'One', 'Two', 'Three' ) ) ),
+					)
+				) ),
+				'tab-4' => new Fieldmanager_Group( array(
+					'label' => 'Tab Four',
+					'children' => array(
+						'richtextarea' => new Fieldmanager_RichTextArea( 'Rich Text Area' ),
+					)
+				) )
+			)
+		) );
+		$fm->add_meta_box( 'Vertical Tabbed Group', 'demo-group' );
+
+		$fm = new Fieldmanager_Group( array(
 			'name'           => 'repeatable_meta_fields',
 			'limit'          => 0,
 			'add_more_label' => 'Add another set of fields',
