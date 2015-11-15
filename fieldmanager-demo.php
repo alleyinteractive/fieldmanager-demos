@@ -49,6 +49,7 @@ function setup_fm_demo() {
 		require_once( $dir . 'class-fm-demo-context-quickedit.php' );
 		require_once( $dir . 'class-fm-demo-context-user.php' );
 		require_once( $dir . 'class-fm-demo-context-submenu.php' );
+		require_once( $dir . 'class-fm-demo-context-customizer.php' );
 	} else {
 		# Add an error message saying, "hey, WTF dude, install FM"
 	}
