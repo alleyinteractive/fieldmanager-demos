@@ -31,7 +31,7 @@ if ( ! class_exists( 'FM_Demo_Context_Customizer' ) ) :
 
 		public function customizer_init() {
 			$fm = new Fieldmanager_Textfield( array( 'name' => 'basic_text' ) );
-			$fm->add_customizer_section( 'Fieldmanager Text Field', 'demo-text' );
+			$fm->add_customizer_section( 'Fieldmanager Text Field' );
 
 			$fm = new Fieldmanager_Group( array(
 				'name'           => 'option_fields',
