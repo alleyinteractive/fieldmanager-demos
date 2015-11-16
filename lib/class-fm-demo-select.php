@@ -75,6 +75,14 @@ class FM_Demo_Select {
 		) );
 		$fm->add_meta_box( 'Repeatable Select Fields', 'demo-select' );
 
+		$fm = new Fieldmanager_Select( array(
+			'name'    => 'repeatable_multi_select',
+			'options' => array( 'One', 'Two', 'Three' ),
+			'limit' => 0,
+			'multiple' => true,
+		) );
+		$fm->add_meta_box( 'Repeatable Multiselect', 'demo-select' );
+
 		$fm = new Fieldmanager_Select( 'Basic Select', array(
 			'name'    => 'sidebar_select',
 			'options' => array( 'One', 'Two', 'Three' )
