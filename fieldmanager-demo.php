@@ -41,6 +41,7 @@ function setup_fm_demo() {
 		require_once( $dir . 'class-fm-demo-datasource.php' );
 		require_once( $dir . 'class-fm-demo-autocomplete.php' );
 		require_once( $dir . 'class-fm-demo-grid.php' );
+		require_once( $dir . 'class-fm-demo-colorpicker.php' );
 		require_once( $dir . 'class-fm-demo-group.php' );
 		require_once( $dir . 'class-fm-demo-misc.php' );
 
