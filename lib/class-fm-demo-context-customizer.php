@@ -96,7 +96,14 @@ if ( ! class_exists( 'FM_Demo_Context_Customizer' ) ) :
 					) ),
 				)
 			) );
-			$fm->add_customizer_section( 'Fieldmanager Miscellaneous Fields' );
+			$fm->add_customizer_section( array(
+				'section_args' => array(
+					'title' => 'Fieldmanager Miscellaneous Fields'
+				),
+				'control_args' => array(
+					'section' => 'title_tagline',
+				),
+			) );
 		}
 	}
 
