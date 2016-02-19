@@ -81,6 +81,7 @@ if ( ! class_exists( 'FM_Demo_Context_Customizer' ) ) :
 					'hidden_field'          => new Fieldmanager_Hidden( 'Hidden Field', array( 'default_value' => 'Fieldmanager was here' ) ),
 					'link_field'            => new Fieldmanager_Link( 'Link Field', array( 'description' => 'This is a text field that sanitizes the value as a URL' ) ),
 					'date_field'            => new Fieldmanager_Datepicker( 'Datepicker Field' ),
+					'color_field'           => new Fieldmanager_Colorpicker( 'Colorpicker Field' ),
 					'date_customized_field' => new Fieldmanager_Datepicker( array(
 						'label'       => 'Datepicker Field with Options',
 						'date_format' => 'Y-m-d',
