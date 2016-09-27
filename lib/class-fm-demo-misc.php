@@ -30,7 +30,10 @@ class FM_Demo_Misc {
 	public function init() {
 		$fm = new Fieldmanager_Group( array(
 			'name'           => 'repeatable_text',
-			'description'    => '<hr />Psst... There is also a hidden field in this meta box with a set value.',
+			'description'    => '<hr />Psst... There is also a hidden field in this meta box with a set value. Also, this description has HTML in it.',
+			'escape'         => array( // Define custom output escaping. Works on "label" and "description".
+				'description' => 'wp_kses_post', // Set that the description should be escaped as HTML.
+			),
 			'children'       => array(
 				'password_field'        => new Fieldmanager_Password( 'Password Field' ),
 				'hidden_field'          => new Fieldmanager_Hidden( 'Hidden Field', array( 'default_value' => 'Fieldmanager was here' ) ),
@@ -48,7 +51,21 @@ class FM_Demo_Misc {
 						'maxDate'     => '2015-12-31'
 					)
 				) ),
-			)
+				'display_if_trigger'    => new Fieldmanager_Select( array(
+					'label'   => 'Display if',
+					'options' => array(
+						'hide' => 'Hide next field',
+						'show' => 'Display next field',
+					),
+				) ),
+				'display_if_selector'   => new Fieldmanager_TextField( array(
+					'label'      => 'This field is displayed if the value of the previous field `display_if_trigger` is "Display next field" ("show")',
+					'display_if' => array( // This works on most, but not all field types
+						'src'   => 'display_if_trigger', // The name of the field which triggers the hide/show. Must be in the same set of children.
+						'value' => 'show', // The value which determines if this field should be shown
+					),
+				) ),
+			),
 		) );
 		$fm->add_meta_box( 'Miscellaneous Fields', 'demo-misc' );
 	}
