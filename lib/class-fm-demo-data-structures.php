@@ -45,7 +45,8 @@ class FM_Demo_Data_Structures {
 
 			register_post_type( $type, array_merge( array(
 				'public' => true,
-				'supports' => array( 'title' ),
+				'supports' => array( 'title', 'editor' ),
+				'show_in_rest' => true,
 				'labels' => array(
 					'name'               => $plural,
 					'singular_name'      => $singular,
