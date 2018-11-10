@@ -34,7 +34,7 @@ class FM_Demo_Context_Term {
 			'name'  => 'text_field',
 			'label' => 'Text Field'
 		) );
-		$fm->add_term_form( 'Standalone Text Field', 'demo-context-term' );
+		$fm->add_term_meta_box( 'Standalone Text Field', 'demo-context-term' );
 
 		$fm = new Fieldmanager_Textfield( array(
 			'name'           => 'repeating_text_field',
@@ -43,7 +43,7 @@ class FM_Demo_Context_Term {
 			'add_more_label' => 'Add another field',
 			'sortable'       => true,
 		) );
-		$fm->add_term_form( 'Standalone Repeating Text Field', 'demo-context-term' );
+		$fm->add_term_meta_box( 'Standalone Repeating Text Field', 'demo-context-term' );
 
 		$fm = new Fieldmanager_Group( array(
 			'name'     => 'meta_fields',
@@ -59,7 +59,7 @@ class FM_Demo_Context_Term {
 				'richtextarea' => new Fieldmanager_RichTextArea( 'Rich Text Area' ),
 			)
 		) );
-		$fm->add_term_form( 'Meta Fields', 'demo-context-term' );
+		$fm->add_term_meta_box( 'Meta Fields', 'demo-context-term' );
 
 		$fm = new Fieldmanager_Group( array(
 			'name'           => 'repeatable_meta_fields',
@@ -79,7 +79,7 @@ class FM_Demo_Context_Term {
 				'richtextarea' => new Fieldmanager_RichTextArea( 'Rich Text Area' ),
 			)
 		) );
-		$fm->add_term_form( 'Meta Boxes', 'demo-context-term' );
+		$fm->add_term_meta_box( 'Meta Boxes', 'demo-context-term' );
 
 
 		$fm = new Fieldmanager_Group( array(
@@ -108,7 +108,7 @@ class FM_Demo_Context_Term {
 				) )
 			)
 		) );
-		$fm->add_term_form( 'Meta Boxes of Meta Boxes', 'demo-context-term' );
+		$fm->add_term_meta_box( 'Meta Boxes of Meta Boxes', 'demo-context-term' );
 
 	}
 }
