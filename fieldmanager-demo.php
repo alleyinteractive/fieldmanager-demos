@@ -35,6 +35,7 @@ function setup_fm_demo() {
 		require_once( $dir . 'class-fm-demo-textarea.php' );
 		require_once( $dir . 'class-fm-demo-richtextarea.php' );
 		require_once( $dir . 'class-fm-demo-checkbox.php' );
+		require_once( $dir . 'class-fm-demo-content.php' );
 		require_once( $dir . 'class-fm-demo-radios.php' );
 		require_once( $dir . 'class-fm-demo-select.php' );
 		require_once( $dir . 'class-fm-demo-media.php' );
