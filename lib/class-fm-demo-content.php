@@ -88,7 +88,7 @@ debuit superis; ubi ramos non pollice.';
 		public function init() {
 			// Plain text example.
 			(
-				new Fieldmanager_Plaintext(
+				new Fieldmanager_Content_Plaintext(
 					[
 						'name'    => 'plaintext_content',
 						'content' => $this->plaintext,
@@ -98,7 +98,7 @@ debuit superis; ubi ramos non pollice.';
 
 			// HTML example.
 			(
-				new Fieldmanager_HTML(
+				new Fieldmanager_Content_HTML(
 					[
 						'name'         => 'html_content',
 						'content'      => $this->html,
@@ -108,7 +108,7 @@ debuit superis; ubi ramos non pollice.';
 
 			// Markdown example.
 			(
-				new Fieldmanager_Markdown(
+				new Fieldmanager_Content_Markdown(
 					[
 						'name'         => 'markdown_content',
 						'content'      => $this->markdown,
